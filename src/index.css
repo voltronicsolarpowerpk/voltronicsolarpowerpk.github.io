@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Imports & Centralized Theme Tokens
+   ========================================================================== */
+
+@import "./styles/fonts.css";
+@import "./styles/global.css";
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #8bc53f;
+  --color-primary-light: #a3d95b;
+  --color-primary-dark: #6fa92f;
+
+  --color-secondary: #f59e0b;
+
+  --color-background: #e6edf4;
+  --color-surface: #ffffff;
+  --color-white: #ffffff;
+  --color-track: #f1f5f9;
+
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Layout & Element Dimensions */
+  --width-container-max: 1280px;
+  --spacing-swiper-nav: 20px;
+  --size-swiper-bullet: 12px;
+  --size-scrollbar: 10px;
+
+  /* Border Radius */
+  --radius-card: 1rem;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Layout Helpers
+   ========================================================================== */
+
+.container-custom {
+  width: 100%;
+  max-width: var(--width-container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-custom {
+    padding-inline: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Swiper Overrides
+   ========================================================================== */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-white);
+  transform: scale(0.75);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    transform: scale(1);
+  }
+}
+
+/* Navigation Position */
+.swiper-button-prev {
+  left: var(--spacing-swiper-nav);
+}
+
+.swiper-button-next {
+  right: var(--spacing-swiper-nav);
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  width: var(--size-swiper-bullet);
+  height: var(--size-swiper-bullet);
+  background: var(--color-white);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Custom Scrollbars
+   ========================================================================== */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: var(--size-scrollbar);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-track);
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "b_101",
+    "brand": "LONGi",
+    "products": [
+      {
+        "id": "p_201",
+        "name": "eHome 5kWh (LV) Battery",
+        "documents": [
+          {
+            "id": "d_301",
+            "title": "Battery Datasheet",
+            "fileName": "longi_ehome_5kwh_lv_battery_datasheet.pdf"
+          }
+        ]
+      },
+      {
+        "id": "p_202",
+        "name": "eHome 16kWh (LV) Battery",
+        "documents": [
+          {
+            "id": "d_302",
+            "title": "Battery Datasheet",
+            "fileName": "longi_ehome_16kwh_lv_battery_datasheet.pdf"
+          }
+        ]
+      },
+      {
+        "id": "p_203",
+        "name": "eHome 6kW & 8kW (1P) Hybrid Inverter",
+        "documents": [
+          {
+            "id": "d_303",
+            "title": "Hybrid Inverter Datasheet",
+            "fileName": "longi_ehome_6kw_8kw_1p_hybrid_inverter_datasheet.pdf"
+          }
+        ]
+      },
+      {
+        "id": "p_204",
+        "name": "eHome 15kW & 20kW (3P) Hybrid Inverter",
+        "documents": [
+          {
+            "id": "d_304",
+            "title": "Hybrid Inverter Datasheet",
+            "fileName": "longi_ehome_15kw_20kw_3p_hybrid_inverter_datasheet.pdf"
+          }
+        ]
+      }
+    ]
+  }
+]
