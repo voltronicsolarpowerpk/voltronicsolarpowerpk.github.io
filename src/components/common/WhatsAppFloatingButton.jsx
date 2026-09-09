@@ -1,12 +1,9 @@
 import { FaWhatsapp } from "react-icons/fa6";
-import { companyConfig } from "../../config/companyConfig";
+import { companyData } from "../../data/company";
 
 export default function WhatsAppFloatingButton() {
-  // Pull WhatsApp phone number from company config (fallback to primary contact phone)
-  const rawPhone = companyConfig?.contact?.whatsapp;
-
   // Clean phone number (remove spaces, dashes, plus signs for clean URL format)
-  const formattedPhone = rawPhone.replace(/\D/g, "");
+  const formattedPhone = companyData.contact.whatsapp.replace(/\D/g, "");
 
   const handleWhatsAppClick = (e) => {
     e.preventDefault();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaPhone, FaEnvelope, FaLocationDot } from "react-icons/fa6";
 
-import { companyConfig } from "../../config/companyConfig";
+import { companyData } from "../../data/company";
 import { useNotification } from "../../context/useNotification";
 import { sendEmail } from "../../services/emailService";
 
@@ -16,26 +16,26 @@ export default function Contact() {
 
   const { showNotification } = useNotification();
 
-  // Format dynamic contact details from companyConfig
+  // Format dynamic contact details from company
   const contactDetails = [
-    companyConfig.contact.phones01 && {
+    companyData.contact.phones01 && {
       icon: FaPhone,
       label: "Call us",
-      value: companyConfig.contact.phones01,
-      href: `tel:${companyConfig.contact.phones01.replace(/\s+/g, "")}`,
+      value: companyData.contact.phones01,
+      href: `tel:${companyData.contact.phones01.replace(/\s+/g, "")}`,
     },
 
-    companyConfig.contact.email && {
+    companyData.contact.email && {
       icon: FaEnvelope,
       label: "Email us",
-      value: companyConfig.contact.email,
-      href: `mailto:${companyConfig.contact.email}`,
+      value: companyData.contact.email,
+      href: `mailto:${companyData.contact.email}`,
     },
 
-    companyConfig.contact.address && {
+    companyData.contact.address && {
       icon: FaLocationDot,
       label: "Visit us",
-      value: `${companyConfig.contact.address.street}, ${companyConfig.contact.address.city}`,
+      value: `${companyData.contact.address.street}, ${companyData.contact.address.city}`,
       href: null,
     },
   ].filter(Boolean);

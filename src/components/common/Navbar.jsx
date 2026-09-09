@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
-import { companyConfig } from "../../config/companyConfig";
+import { companyData } from "../../data/company";
 import { navLinks, navCta } from "../../config/navConfig";
 
 export default function Navbar() {
@@ -20,18 +20,18 @@ export default function Navbar() {
         >
           <span className="w-20 h-20 flex items-center justify-center">
             <img
-              src={companyConfig.logo}
-              alt={companyConfig.alt}
+              src={companyData.logo}
+              alt={companyData.alt}
               className="w-full h-full object-contain"
             />
           </span>
 
           <div className="flex flex-col md:mt-2 lg:mt-3">
             <span className="font-heading font-bold text-lg leading-tight">
-              {companyConfig.name}
+              {companyData.name}
             </span>
             <span className="hidden sm:block text-xs text-slate-500 dark:text-slate-400">
-              {companyConfig.tagline}
+              {companyData.tagline}
             </span>
           </div>
         </a>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaArrowRight, FaPhone, FaLocationDot } from "react-icons/fa6";
-import { companyConfig } from "../../config/companyConfig";
+import { companyData } from "../../data/company";
 import { useNotification } from "../../context/useNotification";
 import { sendEmail } from "../../services/emailService";
 
@@ -95,13 +95,13 @@ export default function Footer({ onOpenAdmin }) {
             >
               <span className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center shrink-0">
                 <img
-                  src={companyConfig.logo}
-                  alt={companyConfig.alt}
+                  src={companyData.logo}
+                  alt={companyData.alt}
                   className="w-full h-full object-contain"
                 />
               </span>
 
-              <span className="text-lg font-bold">{companyConfig.name}</span>
+              <span className="text-lg font-bold">{companyData.name}</span>
             </a>
 
             <div className="flex flex-col items-center md:items-end gap-1 w-full max-w-xs md:max-w-none">
@@ -109,13 +109,13 @@ export default function Footer({ onOpenAdmin }) {
                 <FaPhone className="w-3 h-3 shrink-0" />
 
                 <span className="wrap-break-word">
-                  {companyConfig.contact.phones01}
+                  {companyData.contact.phones01}
                 </span>
 
                 <span className="hidden sm:inline">|</span>
 
                 <span className="wrap-break-word">
-                  {companyConfig.contact.phones02}
+                  {companyData.contact.phones02}
                 </span>
               </span>
 
@@ -123,8 +123,8 @@ export default function Footer({ onOpenAdmin }) {
                 <FaLocationDot className="w-3 h-3 shrink-0 mt-0.5" />
 
                 <span>
-                  {companyConfig.contact.address.street},{" "}
-                  {companyConfig.contact.address.city}
+                  {companyData.contact.address.street},{" "}
+                  {companyData.contact.address.city}
                 </span>
               </span>
             </div>
@@ -134,7 +134,7 @@ export default function Footer({ onOpenAdmin }) {
 
       <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-gray-400">
         <div className="flex items-center justify-center gap-2 lg:gap-4">
-          {companyConfig.socials
+          {companyData.socials
             .filter(({ visible }) => visible)
             .map(({ id, icon: Icon, label, href, target, rel }) => (
               <a
@@ -153,7 +153,7 @@ export default function Footer({ onOpenAdmin }) {
 
       <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-gray-400">
         <p>
-          &copy; {new Date().getFullYear()} {companyConfig.name}. All rights
+          &copy; {new Date().getFullYear()} {companyData.name}. All rights
           reserved.
         </p>
         <button
