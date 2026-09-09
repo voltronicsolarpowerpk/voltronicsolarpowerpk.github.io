@@ -144,7 +144,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 lg:py-28 bg-surface">
+    <section id="testimonials" className="py-4 bg-surface">
       <FaQuoteRight className="absolute -bottom-6 right-4 sm:right-10 w-32 h-32 sm:w-44 sm:h-44 text-primary/10 pointer-events-none" />
 
       <div className="container-custom">

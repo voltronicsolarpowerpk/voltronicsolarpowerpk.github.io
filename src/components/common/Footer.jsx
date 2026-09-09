@@ -4,7 +4,7 @@ import { companyConfig } from "../../config/companyConfig";
 import { useNotification } from "../../context/useNotification";
 import { sendEmail } from "../../services/emailService";
 
-export default function Footer() {
+export default function Footer({ onOpenAdmin }) {
   const [email, setEmail] = useState("");
   const [isSending, setIsSending] = useState(false);
 
@@ -85,10 +85,11 @@ export default function Footer() {
           {/* Logo + contact */}
           <div className="flex flex-col items-center md:items-end justify-center gap-3 w-full md:w-auto text-center md:text-right">
             <a
-              href="#top"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
+                window.history.pushState(null, "", window.location.origin);
               }}
               className="flex items-center gap-3"
             >
@@ -155,6 +156,12 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} {companyConfig.name}. All rights
           reserved.
         </p>
+        <button
+          onClick={onOpenAdmin}
+          className="text-slate-500 hover:text-slate-300 text-xs transition-colors"
+        >
+          Admin Portal
+        </button>
       </div>
     </footer>
   );

@@ -5,7 +5,7 @@ export default function Header() {
   const { contact, socials } = companyConfig;
 
   return (
-    <div className="bg-text text-white">
+    <header className="bg-text text-white">
       <div className="container-custom flex flex-col-reverse lg:flex-row items-center justify-between py-1 lg:py-2  text-sm">
         <div className="flex flex-col sm:flex-row items-center justify-center pt-2 lg:pt-0 lg:justify-start lg:gap-10">
           {contact.phones01 && (
@@ -47,6 +47,6 @@ export default function Header() {
             ))}
         </div>
       </div>
-    </div>
+    </header>
   );
 }

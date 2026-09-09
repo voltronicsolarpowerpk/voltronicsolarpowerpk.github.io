@@ -1,13 +1,6 @@
-import {
-  FaHouse,
-  FaBuilding,
-  FaIndustry,
-  FaFileContract,
-  FaWrench,
-  FaHeadset,
-} from "react-icons/fa6";
+import { FaHouse, FaBuilding, FaIndustry } from "react-icons/fa6";
 
-export const services = [
+export const servicesData = [
   {
     icon: FaHouse,
     title: "Residential systems",

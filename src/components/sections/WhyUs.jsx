@@ -45,7 +45,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-16 sm:py-20 lg:py-28 bg-surface">
+    <section id="why-us" className="py-4 bg-surface">
       <div className="container-custom">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>

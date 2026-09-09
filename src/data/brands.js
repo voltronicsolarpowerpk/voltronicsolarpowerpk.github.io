@@ -4,7 +4,7 @@ import hwooLogo from "../assets/images/brands/hwoo-logo.png";
 import longiLogo from "../assets/images/brands/longi-logo.png";
 import nuukoLogo from "../assets/images/brands/nuuko-logo.png";
 
-export const authorizedBrands = [
+export const brandsData = [
   {
     id: "hwoo",
     name: "HWOO",

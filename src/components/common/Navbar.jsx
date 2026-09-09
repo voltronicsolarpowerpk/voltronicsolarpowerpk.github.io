@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
-// import logo from "../../assets/logo.png";
 import { companyConfig } from "../../config/companyConfig";
 import { navLinks, navCta } from "../../config/navConfig";
 
@@ -12,10 +11,10 @@ export default function Navbar() {
       <div className="container-custom flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <a
-          href="#top"
+          href="/"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.location.href = window.location.origin;
           }}
           className="flex items-center gap-3 shrink-0 cursor-pointer"
         >

@@ -28,7 +28,7 @@ export default function Documents() {
     setExpandedProducts((prev) => ({ ...prev, [id]: !prev[id] }));
 
   return (
-    <section id="documents" className="py-16 sm:py-20 lg:py-28 bg-background">
+    <section id="documents" className="py-4 bg-background">
       <div className="container-custom">
         <div className="text-center max-w-xl mx-auto">
           <p className="text-primary-dark font-semibold tracking-wide">Links</p>

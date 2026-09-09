@@ -1,8 +1,8 @@
-import { projects } from "../../data/projects";
+import { projectsData } from "../../data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-20 lg:py-28 bg-background">
+    <section id="projects" className="py-4 bg-background">
       <div className="container-custom">
         <div className="text-center max-w-xl mx-auto">
           <p className="text-primary-dark font-semibold tracking-wide">
@@ -14,7 +14,7 @@ export default function Projects() {
         </div>
 
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map(({ image, title }, index) => (
+          {projectsData.map(({ image, title }, index) => (
             <div
               key={title}
               className={`group relative overflow-hidden rounded-card aspect-square ${

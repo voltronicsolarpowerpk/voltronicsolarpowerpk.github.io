@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { product } from "../../data/products";
+import { productsData } from "../../data/products";
 import { FaCheck } from "react-icons/fa6";
 
 // Container variant controls staggering of child cards
@@ -30,7 +30,7 @@ const cardVariants = {
 
 export default function Products() {
   return (
-    <section id="products" className="py-16 sm:py-20 lg:py-28 bg-surface">
+    <section id="products" className="py-4 bg-surface">
       <div className="container-custom">
         {/* Header Animation */}
         <motion.div
@@ -50,7 +50,7 @@ export default function Products() {
 
         {/* Categories & Products */}
         <div className="mt-16 space-y-16">
-          {product.map((group) => {
+          {productsData.map((group) => {
             const GroupIcon = group.icon;
             return (
               <div key={group.category}>
@@ -105,7 +105,7 @@ export default function Products() {
 
                           <br />
 
-                          <ul className="mt-4 space-y-2.5">
+                          <ul className="mt-2 space-y-.5">
                             {item.features.map((feature) => (
                               <li
                                 key={feature}
@@ -120,7 +120,7 @@ export default function Products() {
                       </div>
 
                       {/* Action Link */}
-                      <div className="px-6 pb-6">
+                      <div className="px-6 pb-4">
                         <motion.a
                           href="#contact"
                           whileHover={{ x: 3 }}

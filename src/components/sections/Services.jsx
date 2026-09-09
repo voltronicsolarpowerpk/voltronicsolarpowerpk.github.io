@@ -1,5 +1,5 @@
 import { FaCheck } from "react-icons/fa6";
-import { services } from "../../data/services";
+import { servicesData } from "../../data/services";
 
 function ServiceCard({
   icon: Icon,
@@ -71,7 +71,7 @@ function ServiceCard({
 // Main Services Component
 export default function Services() {
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-28 bg-background">
+    <section id="services" className="py-4 bg-background">
       <div className="container-custom">
         <div className="text-center max-w-xl mx-auto">
           <p className="text-primary-dark font-semibold tracking-wide">
@@ -83,7 +83,7 @@ export default function Services() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {servicesData.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>

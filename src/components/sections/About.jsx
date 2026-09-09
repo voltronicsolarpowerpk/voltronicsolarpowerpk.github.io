@@ -20,7 +20,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-28 bg-surface">
+    <section id="about" className="py-4 bg-surface">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image collage */}

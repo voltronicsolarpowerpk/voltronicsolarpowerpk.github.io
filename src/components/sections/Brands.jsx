@@ -1,17 +1,13 @@
 import { motion } from "framer-motion";
 import { FaShield } from "react-icons/fa6";
-import { authorizedBrands } from "../../config/brandData";
+import { brandsData } from "../../data/brands";
 
-export const AuthorizedBrands = () => {
+export default function brands() {
   // Triple the array to ensure seamless infinite looping on ultra-wide screens
-  const sliderBrands = [
-    ...authorizedBrands,
-    ...authorizedBrands,
-    ...authorizedBrands,
-  ];
+  const sliderBrands = [...brandsData, ...brandsData, ...brandsData];
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-background border-y border-text/10 overflow-hidden">
+    <section className="py-4 bg-background overflow-hidden">
       <div className="container-custom px-4 sm:px-6">
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center mb-6 sm:mb-8 lg:mb-10">
@@ -59,6 +55,4 @@ export const AuthorizedBrands = () => {
       </div>
     </section>
   );
-};
-
-export default AuthorizedBrands;
+}
