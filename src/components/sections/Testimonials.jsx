@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaStar, FaQuoteRight } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 
 import clientAvatar1 from "../../assets/images/profile/client-avatar-1.jpg";
 import clientAvatar2 from "../../assets/images/profile/client-avatar-2.jpg";
@@ -144,76 +144,100 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-4 bg-surface">
-      <FaQuoteRight className="absolute -bottom-6 right-4 sm:right-10 w-32 h-32 sm:w-44 sm:h-44 text-primary/10 pointer-events-none" />
-
-      <div className="container-custom">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-primary-dark font-semibold tracking-wide">
-            What clients say
+    <section
+      id="testimonials"
+      className="py-6 sm:py-8 lg:py-10 bg-surface overflow-hidden"
+    >
+      <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ======================= */}
+        {/* 1. SECTION HEADER       */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-xl mx-auto mb-10 sm:mb-12 lg:mb-16"
+        >
+          {/* PASTE YOUR HEADER CODE HERE (e.g., "What we do", "Why us") */}
+          <p className="text-primary-dark font-semibold tracking-wide uppercase text-xs sm:text-sm">
+            Client Feedback
           </p>
-          <h2 className="mt-3 text-text text-3xl sm:text-4xl font-bold leading-tight">
-            Trusted by Homeowners & Businesses Across Pakistan
+          <h2 className="mt-2 sm:mt-3 text-text text-1xl sm:text-2xl lg:text-3xl font-bold tracking-tight whitespace-nowrap">
+            Trusted by Homeowners & Businesses
           </h2>
-        </div>
-
-        <div className="mt-12 relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`${currentIndex}-${visibleCount}`}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit={{ opacity: 0 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            >
-              {visibleTestimonials.map((item) => (
-                <motion.div
-                  key={item.id}
-                  variants={cardVariants}
-                  whileHover={{
-                    y: -6,
-                    transition: { duration: 0.2 },
-                  }}
-                  className="p-8 rounded-2xl bg-white/5 border border-text-light/10 flex flex-col justify-between shadow-sm relative z-10"
-                >
-                  <div>
-                    <div className="flex gap-1">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <FaStar
-                          key={i}
-                          className={`w-5 h-5 ${
-                            i < item.rating
-                              ? "fill-secondary text-secondary"
-                              : "text-text-light/20 fill-current"
-                          }`}
-                        />
-                      ))}
-                    </div>
-
-                    <p className="mt-6 text-text text-lg sm:text-xl font-medium leading-relaxed font-heading">
-                      &quot;{item.quote}&quot;
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex items-center gap-4">
-                    <img
-                      src={item.avatar}
-                      alt={item.name}
-                      className="w-14 h-14 rounded-full object-cover border border-primary/20"
-                    />
-
+          {/* <p className="mt-3 sm:mt-4 text-text-light text-sm sm:text-base leading-relaxed">
+            Read real stories from our satisfied customers who have successfully
+            transitioned to clean, renewable energy.
+          </p> */}
+        </motion.div>
+        {/* ======================= */}
+        {/* 2. SECTION CONTENT      */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full"
+        >
+          <div className="mt-12 relative w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`${currentIndex}-${visibleCount}`}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit={{ opacity: 0 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              >
+                {visibleTestimonials.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    variants={cardVariants}
+                    whileHover={{
+                      y: -6,
+                      transition: { duration: 0.2 },
+                    }}
+                    className="p-8 rounded-2xl bg-white/5 border border-text-light/10 flex flex-col justify-between shadow-sm relative z-10"
+                  >
                     <div>
-                      <p className="font-semibold text-text">{item.name}</p>
+                      <div className="flex gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <FaStar
+                            key={i}
+                            className={`w-5 h-5 ${
+                              i < item.rating
+                                ? "fill-secondary text-secondary"
+                                : "text-text-light/20 fill-current"
+                            }`}
+                          />
+                        ))}
+                      </div>
 
-                      <p className="text-sm text-text-light">{item.role}</p>
+                      <p className="mt-6 text-text text-lg sm:text-xl font-medium leading-relaxed font-heading">
+                        &quot;{item.quote}&quot;
+                      </p>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+
+                    <div className="mt-8 flex items-center gap-4">
+                      <img
+                        src={item.avatar}
+                        alt={item.name}
+                        className="w-14 h-14 rounded-full object-cover border border-primary/20"
+                      />
+
+                      <div>
+                        <p className="font-semibold text-text">{item.name}</p>
+                        <p className="text-sm text-text-light">{item.role}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

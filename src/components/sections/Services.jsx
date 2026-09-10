@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { FaCheck } from "react-icons/fa6";
 import { servicesData } from "../../data/services";
 
@@ -71,22 +73,49 @@ function ServiceCard({
 // Main Services Component
 export default function Services() {
   return (
-    <section id="services" className="py-4 bg-background">
-      <div className="container-custom">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-primary-dark font-semibold tracking-wide">
-            What we do
+    <section
+      id="services"
+      className="py-6 sm:py-8 lg:py-10 bg-background overflow-hidden"
+    >
+      <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ======================= */}
+        {/* 1. SECTION HEADER       */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-xl mx-auto mb-10 sm:mb-12 lg:mb-16"
+        >
+          {/* PASTE YOUR HEADER CODE HERE (e.g., "What we do", "Why us") */}
+          <p className="text-primary-dark font-semibold tracking-wide uppercase text-xs sm:text-sm">
+            Our Expertise
           </p>
-          <h2 className="mt-3 text-text text-3xl sm:text-4xl font-bold leading-tight">
-            Solar systems for every kind of building
+          <h2 className="mt-2 sm:mt-3 text-text text-1xl sm:text-2xl lg:text-3xl font-bold tracking-tight whitespace-nowrap">
+            Solar Solutions for Every Building
           </h2>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesData.map((service) => (
-            <ServiceCard key={service.title} {...service} />
-          ))}
-        </div>
+          {/* <p className="mt-3 sm:mt-4 text-text-light text-sm sm:text-base leading-relaxed">
+            We design, install, and maintain custom energy systems for
+            residential, commercial, and industrial properties.
+          </p> */}
+        </motion.div>
+        {/* ======================= */}
+        {/* 2. SECTION CONTENT      */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesData.map((service) => (
+              <ServiceCard key={service.title} {...service} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

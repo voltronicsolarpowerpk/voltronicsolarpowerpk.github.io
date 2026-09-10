@@ -156,12 +156,14 @@ export default function Footer({ onOpenAdmin }) {
           &copy; {new Date().getFullYear()} {companyData.name}. All rights
           reserved.
         </p>
-        <button
-          onClick={onOpenAdmin}
-          className="text-slate-500 hover:text-slate-300 text-xs transition-colors"
-        >
-          Admin Portal
-        </button>
+        {import.meta.env.VITE_ENABLE_ADMIN === "true" && (
+          <button
+            onClick={onOpenAdmin}
+            className="text-slate-500 hover:text-slate-300 text-xs transition-colors"
+          >
+            Admin Portal
+          </button>
+        )}
       </div>
     </footer>
   );

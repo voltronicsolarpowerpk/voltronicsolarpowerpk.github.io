@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   FaCircleCheck,
   FaShieldHalved,
@@ -45,49 +46,74 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-4 bg-surface">
-      <div className="container-custom">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <div>
-            <p className="text-primary-dark font-semibold tracking-wide">
-              Why us
-            </p>
-            <h2 className="mt-3 text-text text-3xl sm:text-4xl font-bold leading-tight">
-              Built for a solar system that lasts
-            </h2>
-          </div>
-        </div>
+    <section
+      id="why-us"
+      className="py-6 sm:py-8 lg:py-10 bg-surface overflow-hidden"
+    >
+      <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ======================= */}
+        {/* 1. SECTION HEADER       */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-xl mx-auto mb-10 sm:mb-12 lg:mb-16"
+        >
+          {/* PASTE YOUR HEADER CODE HERE (e.g., "What we do", "Why us") */}
+          <p className="text-primary-dark font-semibold tracking-wide uppercase text-xs sm:text-sm">
+            Why Choose Us
+          </p>
+          <h2 className="mt-2 sm:mt-3 text-text text-1xl sm:text-2xl lg:text-3xl font-bold tracking-tight whitespace-nowrap">
+            Built for Systems That Will Last
+          </h2>
+          {/* <p className="mt-3 sm:mt-4 text-text-light text-sm sm:text-base leading-relaxed">
+            We combine expert engineering with rigorous quality control to
+            ensure maximum long-term energy yields.
+          </p> */}
+        </motion.div>
+        {/* ======================= */}
+        {/* 2. SECTION CONTENT      */}
+        {/* ======================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Reasons list */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
+              {reasons.map(({ icon: Icon, title, description }) => (
+                <li key={title} className="flex gap-4">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-primary-dark" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text">{title}</p>
+                    <p className="text-sm text-text-light mt-1 leading-snug">
+                      {description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Reasons list */}
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
-            {reasons.map(({ icon: Icon, title, description }) => (
-              <li key={title} className="flex gap-4">
-                <div className="shrink-0 w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-primary-dark" />
-                </div>
-                <div>
-                  <p className="font-semibold text-text">{title}</p>
-                  <p className="text-sm text-text-light mt-1 leading-snug">
-                    {description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          {/* Image */}
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-none order-first lg:order-last">
-            <div className="relative aspect-square">
-              <div className="absolute inset-4 rounded-full bg-secondary/15" />
-              <img
-                src={whyImg}
-                alt="Solar installer giving a thumbs up on site"
-                className="absolute inset-0 w-full h-full object-cover rounded-full shadow-card"
-              />
+            {/* Image */}
+            <div className="relative mx-auto w-full max-w-sm lg:max-w-md order-first lg:order-last">
+              <div className="relative aspect-square">
+                <div className="absolute inset-4 rounded-full bg-secondary/15" />
+                <img
+                  src={whyImg}
+                  alt="Solar installer giving a thumbs up on site"
+                  className="absolute inset-0 w-full h-full object-cover rounded-full shadow-card"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
