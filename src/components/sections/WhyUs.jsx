@@ -8,7 +8,7 @@ import {
   FaHeadset,
 } from "react-icons/fa6";
 
-import whyImg from "../../assets/images/why-us.jpg";
+import whyVideo from "../../assets/videos/why-us.mp4";
 
 const reasons = [
   {
@@ -52,7 +52,7 @@ export default function WhyUs() {
     >
       <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
         {/* ======================= */}
-        {/* 1. SECTION HEADER       */}
+        {/* 1. SECTION HEADER      */}
         {/* ======================= */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -61,18 +61,14 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-xl mx-auto mb-10 sm:mb-12 lg:mb-16"
         >
-          {/* PASTE YOUR HEADER CODE HERE (e.g., "What we do", "Why us") */}
           <p className="text-primary-dark font-semibold tracking-wide uppercase text-xs sm:text-sm">
             Why Choose Us
           </p>
           <h2 className="mt-2 sm:mt-3 text-text text-1xl sm:text-2xl lg:text-3xl font-bold tracking-tight whitespace-nowrap">
             Built for Systems That Will Last
           </h2>
-          {/* <p className="mt-3 sm:mt-4 text-text-light text-sm sm:text-base leading-relaxed">
-            We combine expert engineering with rigorous quality control to
-            ensure maximum long-term energy yields.
-          </p> */}
         </motion.div>
+
         {/* ======================= */}
         {/* 2. SECTION CONTENT      */}
         {/* ======================= */}
@@ -101,13 +97,16 @@ export default function WhyUs() {
               ))}
             </ul>
 
-            {/* Image */}
+            {/* Video */}
             <div className="relative mx-auto w-full max-w-sm lg:max-w-md order-first lg:order-last">
               <div className="relative aspect-square">
                 <div className="absolute inset-4 rounded-full bg-secondary/15" />
-                <img
-                  src={whyImg}
-                  alt="Solar installer giving a thumbs up on site"
+                <video
+                  src={whyVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="absolute inset-0 w-full h-full object-cover rounded-full shadow-card"
                 />
               </div>
