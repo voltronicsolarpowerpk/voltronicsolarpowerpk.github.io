@@ -1,4 +1,5 @@
 import projectImage from "../assets/images/projects/project.jpg";
+import projectImage02 from "../assets/images/projects/VSP_Project_02.jpg";
 
 export const projectsData = [
   {
@@ -26,7 +27,7 @@ export const projectsData = [
 
   {
     id: 2,
-    image: projectImage,
+    image: projectImage02,
     title: "Residential Rooftop Solar Installation",
     clientName: "Private Residential Client",
     address: "DHA, Lahore, Pakistan",
