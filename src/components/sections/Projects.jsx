@@ -68,6 +68,16 @@ export default function Projects() {
                       {project.status}
                     </span>
                   </div>
+
+                  {/* Bottom Left Text with Gradient Overlay */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 pb-4 px-4">
+                    <span className="block text-xs sm:text-sm font-medium text-gray-300">
+                      {project.onScreenSubtitle}
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                      {project.onScreenTitle}
+                    </h3>
+                  </div>
                 </div>
 
                 {/* Content */}
